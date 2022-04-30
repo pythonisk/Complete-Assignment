@@ -57,7 +57,7 @@ def MultiReadingProcess(prs):
 
 
     # print(multi_dataset)
-    multi_dataset.to_csv('Multiprocess_count_result_30_04_2022.csv', index=False)
+    # multi_dataset.to_csv('Multiprocess_count_result_30_04_2022.csv', index=False)
     print('Total time consumption: ', datetime.now() - start_time)
     
     return 'MultiReadingPRocess Done!'
@@ -86,10 +86,10 @@ def Perfile_process(prs):
 
 
     Perfile_dataset = pd.DataFrame(final_list, columns = ['File Name', 'Per file, number of customers that have churned', 'Per file, number of customers that have paperless billing'])
-    print(Perfile_dataset)
-    print(pd.DataFrame(list(zip(Perfile_dataset['File Name'].tolist(), Perfile_dataset['Per file, number of customers that have churned'].tolist())), columns=['File Name', 'Per file, number of customers that have churned']))
+    # print(Perfile_dataset)
+    # print(pd.DataFrame(list(zip(Perfile_dataset['File Name'].tolist(), Perfile_dataset['Per file, number of customers that have churned'].tolist())), columns=['File Name', 'Per file, number of customers that have churned']))
     pd.DataFrame(list(zip(Perfile_dataset['File Name'].tolist(), Perfile_dataset['Per file, number of customers that have churned'].tolist())), columns=['File Name', 'Per file, number of customers that have churned']).to_csv('Per file data for Churned.csv', index=False)
-    print(pd.DataFrame(list(zip(Perfile_dataset['File Name'].tolist(), Perfile_dataset['Per file, number of customers that have paperless billing'].tolist())), columns=['File Name', 'Per file, number of customers that have paperless billing']))
+    # print(pd.DataFrame(list(zip(Perfile_dataset['File Name'].tolist(), Perfile_dataset['Per file, number of customers that have paperless billing'].tolist())), columns=['File Name', 'Per file, number of customers that have paperless billing']))
     pd.DataFrame(pd.DataFrame(list(zip(Perfile_dataset['File Name'].tolist(), Perfile_dataset['Per file, number of customers that have paperless billing'].tolist())), columns=['File Name', 'Per file, number of customers that have paperless billing'])).to_csv('Per file data for PaperlessBilling.csv', index=False)
     
 
